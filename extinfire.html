@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExtinFire Antioquia</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    background: #0f172a;
+    color: white;
+    line-height: 1.6;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(2, 6, 23, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #f97316;
+  }
+
+  .menu {
+    display: flex;
+    gap: 20px;
+  }
+
+  .menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 0.95rem;
+  }
+
+  .menu a:hover {
+    color: #f97316;
+  }
+
+  /* HERO */
+  .hero {
+    height: 90vh;
+    background: linear-gradient(135deg, #b91c1c, #f97316);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  .hero p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .btn {
+    margin-top: 20px;
+    display: inline-block;
+    background: #22c55e;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #16a34a;
+    transform: scale(1.05);
+  }
+
+  /* SECCIONES */
+  section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  /* CARDS */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    background: #273449;
+  }
+
+  /* UBICACION */
+  .locations {
+    text-align: center;
+  }
+
+  .tag {
+    display: inline-block;
+    background: #f97316;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  /* CONTACTO */
+  .contact {
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    background: #020617;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  .coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.zone {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.zone:hover {
+  transform: translateY(-5px);
+  background: #273449;
+}
+
+.zone.main {
+  background: linear-gradient(135deg, #f97316, #b91c1c);
+  font-weight: 700;
+}
+
+.note {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+.subtitle {
+  text-align: center;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+.coverage {
+  max-width: 700px;
+  margin: auto;
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  line-height: 1.8;
+}
+
+.coverage p {
+  margin-bottom: 10px;
+}
+.card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* efecto hover moderno */
+.card:hover {
+  transform: translateY(-10px);
+  background: #273449;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+  border-color: rgba(249, 115, 22, 0.4);
+}
+
+/* iconos */
+.card i {
+  font-size: 30px;
+  color: #f97316;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+/* animación icono */
+.card:hover i {
+  transform: scale(1.2) rotate(-5deg);
+  color: #fb923c;
+}
+
+/* pequeño brillo animado */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(249,115,22,0.08), transparent 60%);
+  transform: rotate(0deg);
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+.coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.zone {
+  background: #1e293b;
+  padding: 20px 15px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover igual estilo cards */
+.zone:hover {
+  transform: translateY(-10px);
+  background: #273449;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+  border-color: rgba(249, 115, 22, 0.4);
+}
+
+/* iconos */
+.zone i {
+  font-size: 24px;
+  color: #f97316;
+  margin-bottom: 10px;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.zone:hover i {
+  transform: scale(1.2);
+  color: #fb923c;
+}
+
+/* zona principal destacada */
+.zone.main {
+  background: linear-gradient(135deg, #f97316, #b91c1c);
+  font-weight: 700;
+}
+
+.zone.main i {
+  color: white;
+}
+
+/* brillo suave */
+.zone::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(249,115,22,0.08), transparent 60%);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.zone:hover::before {
+  opacity: 1;
+}
+
+.zone p {
+  margin-top: 8px;
+}
+.coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+/* responsive para celular */
+@media (max-width: 900px) {
+  .coverage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .coverage-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.legal-box {
+  max-width: 850px;
+  margin: auto;
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.05);
+  line-height: 1.8;
+  transition: 0.3s;
+}
+
+/* hover suave como las cards */
+.legal-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.legal-box p {
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+.contact-box {
+  max-width: 850px;
+  margin: auto;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.05);
+  display: grid;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.contact-item i {
+  font-size: 26px;
+  color: #f97316;
+}
+
+/* botón más pequeño para contacto */
+.btn.small {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+.footer {
+  background: #020617;
+  padding: 50px 20px 20px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.footer-box h3,
+.footer-box h4 {
+  margin-bottom: 10px;
+  color: #f97316;
+}
+
+.footer-box p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 15px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+.extras-box {
+  max-width: 850px;
+  margin: auto;
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.05);
+  display: grid;
+  gap: 20px;
+  transition: 0.3s;
+}
+
+/* hover igual que otras secciones */
+.extras-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.extra-item h3 {
+  color: #f97316;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.extra-item p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+/* ICONO HAMBURGUESA */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* checkbox oculto */
+#menu-toggle {
+  display: none;
+}
+
+/* PC NORMAL */
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+/* ===== MÓVIL ===== */
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: rgba(2, 6, 23, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+    display: none;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .menu a {
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* cuando se activa el checkbox */
+  #menu-toggle:checked ~ .menu {
+    display: flex;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">🧯 ExtinFire</div>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">
+    <i class="fas fa-bars"></i>
+  </label>
+
+  <div class="menu">
+    <a href="#servicios">Servicios</a>
+    <a href="#ubicacion">Cobertura</a>
+    <a href="#adicionales">Recarga</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#terminos">Términos</a>
+    <a href="#privacidad">Privacidad</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>🧯 ExtinFire Antioquia</h1>
+    <p>Recarga, mantenimiento y certificación de extintores</p>
+
+    <a href="#contacto" class="btn">Solicitar servicio</a>
+
+    <a href="https://wa.me/573023526217?text=Hola%20quiero%20solicitar%20recarga%20de%20extintor"
+       target="_blank"
+       class="btn secondary">
+       ⚡ Recarga Ya
+    </a>
+
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<!-- SERVICIOS -->
+<section id="servicios">
+  <h2>🛠️ Servicios</h2>
+
+  <div class="grid services-grid">
+
+    <div class="card">
+      <i class="fas fa-fire-extinguisher"></i>
+      <p>Recarga de extintores ABC, CO₂ y PQS</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-tools"></i>
+      <p>Mantenimiento preventivo y correctivo</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-certificate"></i>
+      <p>Certificación de equipos contra incendios</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-clipboard-check"></i>
+      <p>Inspección técnica y auditoría de seguridad</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-building"></i>
+      <p>Servicio para empresas e industrias</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-home"></i>
+      <p>Servicio para hogares y conjuntos residenciales</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-truck"></i>
+      <p>Recogida y entrega a domicilio</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-shield-alt"></i>
+      <p>Asesoría en normas de seguridad contra incendios</p>
+    </div>
+
+  </div>
+</section>
+<!-- COBERTURA -->
+<section id="ubicacion" class="locations">
+  <h2>📍 Cobertura</h2>
+
+  <p class="subtitle">
+    Prestamos servicio de recarga y mantenimiento de extintores en el Valle de Aburrá.
+  </p>
+
+  <div class="coverage-grid">
+
+    <div class="zone main">
+      <i class="fas fa-map-marker-alt"></i>
+      <p>Medellín (Zona principal)</p>
+    </div>
+
+    <div class="zone">
+      <i class="fas fa-city"></i>
+      <p>Envigado</p>
+    </div>
+
+    <div class="zone">
+      <i class="fas fa-city"></i>
+      <p>Bello</p>
+    </div>
+
+    <div class="zone">
+      <i class="fas fa-city"></i>
+      <p>Itagüí</p>
+    </div>
+
+    <div class="zone">
+      <i class="fas fa-city"></i>
+      <p>Sabaneta</p>
+    </div>
+
+    <div class="zone">
+      <i class="fas fa-city"></i>
+      <p>La Estrella</p>
+    </div>
+
+    <div class="zone">
+      <i class="fas fa-city"></i>
+      <p>Copacabana</p>
+    </div>
+
+    <div class="zone">
+      <i class="fas fa-city"></i>
+      <p>Girardota</p>
+    </div>
+
+  </div>
+
+  <div class="note">
+    🚚 Servicio a domicilio para empresas, comercios, industrias y conjuntos residenciales
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contact">
+  <h2>📞 Contacto</h2>
+  <p>Comunícate con nosotros directamente</p>
+
+  <div class="contact-box">
+
+    <div class="contact-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <p>Cl 44 #70-108, Laureles - Estadio<br>Medellín, Antioquia</p>
+    </div>
+
+    <div class="contact-item">
+      <i class="fas fa-phone"></i>
+      <p>302 352 6217</p>
+      <a class="btn small" href="https://wa.me/573023526217" target="_blank">
+        💬 WhatsApp
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <i class="fas fa-envelope"></i>
+      <p>extinfireantioquia@gmail.com</p>
+    </div>
+
+  </div>
+</section>
+<section id="adicionales">
+  <h2>➕ Servicios adicionales</h2>
+
+  <div class="extras-box">
+
+    <div class="extra-item">
+      <h3>Recarga Nequi PSE</h3>
+      <p>Apoyo en recargas digitales de forma informativa.</p>
+    </div>
+
+    <div class="extra-item">
+      <h3>Pagos PSE</h3>
+      <p>Orientación para pagos electrónicos y procesos digitales seguros.</p>
+    </div>
+
+  </div>
+</section>
+<section id="terminos">
+  <h2>📄 Términos y Condiciones</h2>
+
+  <div class="legal-box">
+
+    <p><strong>1. Servicio:</strong> Ofrecemos recarga, mantenimiento y certificación de extintores en el área de Antioquia.</p>
+
+    <p><strong>2. Responsabilidad:</strong> El cliente debe garantizar el buen estado del equipo previo a la intervención técnica.</p>
+
+    <p><strong>3. Garantía:</strong> Los servicios cuentan con garantía limitada según el tipo de mantenimiento realizado.</p>
+
+    <p><strong>4. Pagos:</strong> El pago debe realizarse al momento de la entrega del servicio, salvo acuerdos comerciales.</p>
+
+    <p><strong>5. Uso del servicio:</strong> El cliente es responsable del uso adecuado de los equipos después del servicio.</p>
+
+  </div>
+</section>
+<section id="privacidad">
+  <h2>🔒 Política de Privacidad</h2>
+
+  <div class="legal-box">
+
+    <p><strong>1. Datos recopilados:</strong> Solo recolectamos información básica como nombre, teléfono y dirección para prestar el servicio.</p>
+
+    <p><strong>2. Uso de datos:</strong> La información es utilizada exclusivamente para contacto y gestión de servicios técnicos.</p>
+
+    <p><strong>3. Protección:</strong> Los datos del cliente no se venden ni se comparten con terceros.</p>
+
+    <p><strong>4. Almacenamiento:</strong> La información se almacena de forma segura y solo durante el tiempo necesario.</p>
+
+    <p><strong>5. Derechos del usuario:</strong> El cliente puede solicitar eliminación o modificación de sus datos en cualquier momento.</p>
+
+  </div>
+</section>
+<footer class="footer">
+  
+  <div class="footer-content">
+
+    <div class="footer-box">
+      <h3>🧯 ExtinFire Antioquia</h3>
+      <p>Recarga, mantenimiento y certificación de extintores en Medellín y el Valle de Aburrá.</p>
+    </div>
+
+    <div class="footer-box">
+      <h4>📍 Dirección</h4>
+      <p>Cl 44 #70-108<br>Laureles - Estadio<br>Medellín, Antioquia</p>
+    </div>
+
+    <div class="footer-box">
+      <h4>📞 Contacto</h4>
+      <p>302 352 6217</p>
+      <p>extinfireantioquia@gmail.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 ExtinFire Antioquia — Todos los derechos reservados</p>
+  </div>
+
+</footer>
+
+</body>
+</html>
